@@ -1,24 +1,5 @@
-import { blue, empty, turquoise, white } from './index';
-
-function Block() {
-  // it's a 2x3 matrix
-
-  const block = [
-    [empty, empty, empty],
-    [empty, empty, empty]
-  ];
-  return {
-    current: () => {
-      return block;
-    },
-    place: (knife, x, y) => {
-      block[x][y] = knife;
-    },
-    remove: (x, y) => {
-      block[x][y] = empty;
-    }
-  };
-}
+import { empty, Block } from './Block';
+import { blue, turquoise, white } from './Knife';
 
 // given when then
 // arrange act assert

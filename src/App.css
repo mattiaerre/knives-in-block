@@ -2,15 +2,39 @@ main {
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+section {
+  border-bottom: 1px solid gray;
+  margin-bottom: 40px;
 }
 
-.knife {
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.block,
+.knives {
+  /*
+  background-color: red;
+  */
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.knife,
+.slot {
   border: 1px solid gray;
   height: 20px;
   margin: 10px 40px;
   width: 40px;
+}
+
+.empty {
+  background-color: black;
 }
 
 .blue {
@@ -23,4 +47,10 @@ ul {
 
 .white {
   background-color: white;
+}
+
+.debug {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
