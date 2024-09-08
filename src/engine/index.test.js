@@ -13,6 +13,9 @@ function Block() {
     },
     place: (knife, x, y) => {
       block[x][y] = knife;
+    },
+    remove: (x, y) => {
+      block[x][y] = empty;
     }
   };
 }
@@ -32,12 +35,20 @@ test('place white', () => {
   const block = Block();
   block.place(white, 0, 0);
 
-  expect(white).toEqual(block.current()[0][0]);
+  expect(block.current()[0][0]).toEqual(white);
 });
 
 test('place blue', () => {
   const block = Block();
   block.place(blue, 0, 0);
 
-  expect(blue).toEqual(block.current()[0][0]);
+  expect(block.current()[0][0]).toEqual(blue);
+});
+
+test('remove white', () => {
+  const block = Block();
+  block.place(white, 0, 1);
+  block.remove(0, 1);
+
+  expect(block.current()[0][1]).toEqual(empty);
 });

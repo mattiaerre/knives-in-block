@@ -1,3 +1,26 @@
 main {
   text-align: center;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.knife {
+  border: 1px solid gray;
+  height: 20px;
+  margin: 10px 40px;
+  width: 40px;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.turquoise {
+  background-color: turquoise;
+}
+
+.white {
+  background-color: white;
+}
