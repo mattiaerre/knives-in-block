@@ -7,5 +7,3 @@
 - [Create React App](https://create-react-app.dev/)
 - [Google Fonts - Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
 - [NVM](https://github.com/nvm-sh/nvm)
-
-TEST
