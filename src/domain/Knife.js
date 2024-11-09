@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import './Knife.css';
+import PropTypes from 'prop-types';
+import styles from './Knife.module.css';
 
 export default function Knife({ color }) {
   const states = { down: 'down', slot: 'slot', up: 'up' };
@@ -18,10 +19,19 @@ export default function Knife({ color }) {
 
   return (
     <div
-      className={classNames(color, 'knife', state)}
+      className={classNames(
+        color,
+        'knife',
+        state === states.up ? styles.up : styles.down,
+        styles.knife
+      )}
       data-testid="knife"
       onClick={handleOnClick}
       style={{ backgroundColor: color }}
     ></div>
   );
 }
+
+Knife.propTypes = {
+  color: PropTypes.string.isRequired
+};
