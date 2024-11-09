@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="red down"
-  data-testid="knife"
-  onClick={[Function]}
-/>
+<DocumentFragment>
+  <div
+    class="red knife down"
+    data-testid="knife"
+    style="background-color: red;"
+  />
+</DocumentFragment>
 `;

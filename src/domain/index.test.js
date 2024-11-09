@@ -1,5 +1,5 @@
 import { empty, Block } from './Block';
-import { blue, turquoise, white } from './Knife';
+import { blue, turquoise, white } from '../tmp/Knife';
 
 // given when then
 // arrange act assert

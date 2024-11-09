@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { empty, emptyBlock } from './domain/Block';
 import { blue, turquoise, white, Knife } from './tmp/Knife';
+import NewKnife from './domain/Knife';
 
 const knives = [
   [blue, turquoise, white],
@@ -88,6 +89,9 @@ function App() {
         <small>Selected knife: {knife}</small>
         <small>Block x: {x}</small>
         <small>Block y: {y}</small>
+      </section>
+      <section className="playground">
+        <NewKnife color="yellow" />
       </section>
     </main>
   );
