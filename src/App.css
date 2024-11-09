@@ -1,3 +1,65 @@
 main {
   text-align: center;
 }
+
+section {
+  border-bottom: 1px solid gray;
+  margin-bottom: 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.block,
+.knives {
+  /*
+  background-color: red;
+  */
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.knife {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.25;
+}
+
+.knife,
+.slot {
+  border: 1px solid gray;
+  height: 20px;
+  margin: 10px 40px;
+  width: 40px;
+}
+
+.empty {
+  background-color: black;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.turquoise {
+  background-color: turquoise;
+}
+
+.white {
+  background-color: white;
+}
+
+.debug {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
