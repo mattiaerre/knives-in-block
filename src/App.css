@@ -25,6 +25,15 @@ ul {
   justify-content: space-evenly;
 }
 
+.knife {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.25;
+}
+
 .knife,
 .slot {
   border: 1px solid gray;

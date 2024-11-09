@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import { Block, empty, emptyBlock } from './domain/Block';
-import { blue, turquoise, white } from './domain/Knife';
+import { empty, emptyBlock } from './domain/Block';
+import { blue, turquoise, white, Knife } from './tmp/Knife';
 
 const knives = [
   [blue, turquoise, white],
@@ -19,11 +19,24 @@ function App() {
     setKnife(color);
   }
 
+  function handleOnClickReset() {
+    setBlock(emptyBlock);
+    setKnife(empty);
+    setX(-1);
+    setY(-1);
+  }
+
   function handleOnClickSlot({ target: { className } }) {
     const x = className.split(' ')[2];
     const y = className.split(' ')[3];
     setX(parseInt(x, 0));
     setY(parseInt(y, 0));
+    // this is the main logic
+    setBlock((previous) => {
+      const next = JSON.parse(JSON.stringify(previous));
+      next[x][y] = knife;
+      return next;
+    });
   }
 
   return (
@@ -39,10 +52,11 @@ function App() {
             <ul className="row" key={`${x}`}>
               {row.map((knife, y) => {
                 return (
-                  <li
-                    className={`knife ${knife}`}
+                  <Knife
+                    isSelected={false}
                     key={`${x}${y}`}
-                    onClick={handleOnClickKnife}
+                    knife={knife}
+                    handleOnClickKnife={handleOnClickKnife}
                   />
                 );
               })}
@@ -69,6 +83,8 @@ function App() {
         })}
       </section>
       <section className="debug">
+        <button onClick={handleOnClickReset}>Reset</button>
+        <small>Block: {JSON.stringify(block, 0, 2)}</small>
         <small>Selected knife: {knife}</small>
         <small>Block x: {x}</small>
         <small>Block y: {y}</small>
