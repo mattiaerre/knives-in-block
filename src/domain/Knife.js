@@ -1,33 +1,30 @@
-import classNames from 'classnames';
-import { useState } from 'react';
+import { DOWN, UP } from '../models/constants';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import makeKnife from '../models/makeKnife';
 import styles from './Knife.module.css';
+import { useState } from 'react';
 
 export default function Knife({ color }) {
-  const states = { down: 'down', slot: 'slot', up: 'up' };
-
-  const [state, setState] = useState(states.down);
+  const knife = makeKnife(color);
+  const [state, setState] = useState(knife.state());
 
   function handleOnClick() {
-    if (state === states.down) {
-      setState(states.up);
+    if (state === DOWN) {
+      knife.pickUp();
     }
-    if (state === states.up) {
-      setState(states.down);
+    if (state === UP) {
+      knife.putDown();
     }
+    setState(knife.state());
   }
 
   return (
     <div
-      className={classNames(
-        color,
-        'knife',
-        state === states.up ? styles.up : styles.down,
-        styles.knife
-      )}
+      className={classNames(styles[state], styles.knife)}
       data-testid="knife"
       onClick={handleOnClick}
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: knife.color }}
     ></div>
   );
 }
