@@ -3,35 +3,41 @@ import Knife from './components/Knife';
 import Slot from './components/Slot';
 import { useReducer } from 'react';
 
-const initialArg = { block: null, knifeId: null };
+const initialArg = { block: null, knife: null };
 
 function reducer(state, action) {
   switch (action.type) {
     case 'knife_pick_up': {
       return {
         ...state,
-        knifeId: action.value
+        knife: action.value
       };
     }
     case 'knife_put_down': {
       return {
         ...state,
-        knifeId: null
+        knife: null
       };
     }
     case 'slot_place_knife': {
       return {
         ...state,
         block: action.value,
-        knifeId: null
+        knife: null
       };
     }
+    default:
+      throw Error(`Unknown action: ${action.type}`);
   }
-  throw Error(`Unknown action: ${action.type}`);
 }
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialArg);
+
+  function getKnifeFromState() {
+    return state.knife;
+  }
+
   return (
     <main>
       <h1 className="source-sans-3-700">Jean Dubost</h1>
@@ -50,8 +56,8 @@ function App() {
       <section className="playground">
         <Knife color="blue" dispatch={dispatch} id="k1" />
         <Knife color="red" dispatch={dispatch} id="k2" />
-        <Slot dispatch={dispatch} id="s1" knifeId={state.knifeId} />
-        <Slot dispatch={dispatch} id="s2" knifeId={state.knifeId} />
+        <Slot dispatch={dispatch} id="s1" onClick={getKnifeFromState} />
+        <Slot dispatch={dispatch} id="s2" onClick={getKnifeFromState} />
       </section>
     </main>
   );

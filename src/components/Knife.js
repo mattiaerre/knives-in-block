@@ -1,4 +1,4 @@
-import { DOWN, UP } from '../models/constants';
+import { DOWN, UP } from './constants';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Knife.module.css';
@@ -10,7 +10,10 @@ export default function Knife({ color, dispatch, id }) {
   function handleOnClick() {
     if (state === DOWN) {
       setState(UP);
-      return dispatch({ type: 'knife_pick_up', value: id });
+      return dispatch({
+        type: 'knife_pick_up',
+        value: { color: color, id: id }
+      });
     }
     if (state === UP) {
       setState(DOWN);

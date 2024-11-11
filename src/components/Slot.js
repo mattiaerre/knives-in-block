@@ -1,27 +1,31 @@
-import { EMPTY, FULL } from '../models/constants';
+import { BLACK, EMPTY, FULL } from './constants';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Slot.module.css';
 import { useState } from 'react';
 
-export default function Slot({ dispatch, id, knifeId }) {
+export default function Slot({ dispatch, id, onClick }) {
+  const [knife, setKnife] = useState(null);
   const [state, setState] = useState(EMPTY);
 
   function handleOnClick() {
-    if (state === EMPTY && knifeId) {
+    const _knife = onClick();
+    if (state === EMPTY && _knife) {
+      setKnife(_knife);
       setState(FULL);
       return dispatch({
         type: 'slot_place_knife',
-        value: { knifeId: knifeId, slotId: id }
+        value: { id: id, knife: _knife }
       });
     }
   }
 
   return (
     <div
-      className={classNames(styles.slot)}
+      className={classNames(styles[state], styles.slot)}
       data-testid="slot"
       onClick={handleOnClick}
+      style={{ backgroundColor: knife ? knife.color : BLACK }}
     ></div>
   );
 }
@@ -29,5 +33,5 @@ export default function Slot({ dispatch, id, knifeId }) {
 Slot.propTypes = {
   dispatch: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
-  knifeId: PropTypes.string
+  onClick: PropTypes.func.isRequired
 };

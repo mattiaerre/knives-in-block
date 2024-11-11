@@ -1,3 +1,9 @@
+.empty {
+}
+
+.full {
+}
+
 .slot {
   border: 1px solid gray;
   cursor: pointer;
