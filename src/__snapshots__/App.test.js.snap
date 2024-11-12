@@ -14,6 +14,17 @@ exports[`renders 1`] = `
       Laguiole Set of 6 Steak Knives in Block
     </h2>
     <section>
+      <p
+        style="text-align: right;"
+      >
+        <button
+          class="source-sans-3-500"
+        >
+          Reset
+        </button>
+      </p>
+    </section>
+    <section>
       <h3
         class="source-sans-3-500"
       >
@@ -161,6 +172,13 @@ exports[`renders 1`] = `
         .
       </p>
     </section>
+    <footer>
+      <small
+        class="source-sans-3-400"
+      >
+        knives-in-block v0.3.0 ©2024
+      </small>
+    </footer>
   </main>
 </DocumentFragment>
 `;

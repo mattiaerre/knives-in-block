@@ -32,3 +32,11 @@ it('on click s1 then s2', () => {
   expect(screen.getByTestId('s1')).toHaveClass('up');
   expect(screen.getByTestId('s2')).toHaveClass('down');
 });
+
+it('on click reset', () => {
+  render(<App />);
+  fireEvent.click(screen.getByTestId('s3'));
+  expect(screen.getByTestId('s3')).toHaveClass('up');
+  fireEvent.click(screen.getByText('Reset'));
+  expect(screen.getByTestId('s3')).toHaveClass('down');
+});

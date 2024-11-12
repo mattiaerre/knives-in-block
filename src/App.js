@@ -5,7 +5,7 @@ import Slot from './components/Slot';
 import classNames from 'classnames';
 import { useReducer } from 'react';
 
-const version = '0.2.1';
+const version = '0.3.0';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
@@ -51,6 +51,9 @@ function reducer(state, action) {
         },
         slot: null
       };
+    }
+    case 'reset': {
+      return initialArg;
     }
     default:
       throw Error(`Unknown action: ${action.type}`);
@@ -107,6 +110,18 @@ function App() {
       <h2 className="source-sans-3-500">
         Laguiole Set of 6 Steak Knives in Block
       </h2>
+      <section>
+        <p style={{ textAlign: 'right' }}>
+          <button
+            className="source-sans-3-500"
+            onClick={() => {
+              dispatch({ type: 'reset' });
+            }}
+          >
+            Reset
+          </button>
+        </p>
+      </section>
       <section>
         <h3 className="source-sans-3-500">Knives</h3>
         <KnivesOrBlocks end={6} start={0} type={KNIVES} />
