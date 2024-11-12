@@ -5,6 +5,8 @@ import Slot from './components/Slot';
 import classNames from 'classnames';
 import { useReducer } from 'react';
 
+const version = '0.2.1';
+
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
   s2: { color: 'blue', id: 'k2', state: DOWN },
@@ -125,6 +127,11 @@ function App() {
           <span style={{ color: 'gray', fontWeight: 'bold' }}>gray</span>.
         </p>
       </section>
+      <footer>
+        <small className="source-sans-3-400">
+          knives-in-block {`v${version}`} &copy;{new Date().getFullYear()}
+        </small>
+      </footer>
     </main>
   );
 }
