@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders w/ knife 1`] = `
+<DocumentFragment>
+  <div
+    class="undefined slot"
+    data-testid="slot"
+    id="s1"
+    style="background-color: blue;"
+  />
+</DocumentFragment>
+`;
+
+exports[`renders w/o knife 1`] = `
+<DocumentFragment>
+  <div
+    class="empty slot"
+    data-testid="slot"
+    id="s2"
+    style="background-color: black;"
+  />
+</DocumentFragment>
+`;

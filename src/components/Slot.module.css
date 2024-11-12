@@ -1,3 +1,6 @@
+.down {
+}
+
 .empty {
 }
 
@@ -10,4 +13,8 @@
   height: 20px;
   margin: 10px 40px;
   width: 40px;
+}
+
+.up {
+  opacity: 50%;
 }

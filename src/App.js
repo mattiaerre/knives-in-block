@@ -1,29 +1,52 @@
 import './App.css';
-import Knife from './components/Knife';
+import { DOWN, UP } from './components/constants';
+import PropTypes from 'prop-types';
 import Slot from './components/Slot';
 import { useReducer } from 'react';
 
-const initialArg = { block: null, knife: null };
+const initialSlots = {
+  s1: { color: 'blue', id: 'k1', state: DOWN },
+  s2: { color: 'blue', id: 'k2', state: DOWN },
+  s3: { color: 'turquoise', id: 'k3', state: DOWN },
+  s4: { color: 'turquoise', id: 'k4', state: DOWN },
+  s5: { color: 'white', id: 'k5', state: DOWN },
+  s6: { color: 'white', id: 'k6', state: DOWN },
+  s7: null,
+  s8: null,
+  s9: null,
+  s10: null,
+  s11: null,
+  s12: null
+};
+
+const initialArg = {
+  block: null,
+  knife: null,
+  slot: null,
+  slots: initialSlots
+};
 
 function reducer(state, action) {
   switch (action.type) {
     case 'knife_pick_up': {
       return {
         ...state,
-        knife: action.value
+        slot: action.value,
+        slots: {
+          ...state.slots,
+          [action.value.id]: { ...action.value.knife, state: UP }
+        }
       };
     }
     case 'knife_put_down': {
       return {
         ...state,
-        knife: null
-      };
-    }
-    case 'slot_place_knife': {
-      return {
-        ...state,
-        block: action.value,
-        knife: null
+        slots: {
+          ...state.slots,
+          [state.slot.id]: null,
+          [action.value.id]: { ...state.slot.knife, state: DOWN }
+        },
+        slot: null
       };
     }
     default:
@@ -34,9 +57,45 @@ function reducer(state, action) {
 function App() {
   const [state, dispatch] = useReducer(reducer, initialArg);
 
-  function getKnifeFromState() {
-    return state.knife;
+  function handleOnClick(slot) {
+    if (state.slot === null && slot.knife === null) {
+      return console.log('Noops');
+    }
+    if (state.slot === null && slot.knife !== null) {
+      return dispatch({ type: 'knife_pick_up', value: slot });
+    }
+    if (
+      (state.slot !== null && slot.knife === null) ||
+      state.slot.id === slot.id
+    ) {
+      return dispatch({ type: 'knife_put_down', value: slot });
+    }
+    if (state.slot !== null && slot.knife !== null) {
+      return console.log('The target slot is already full');
+    }
+    throw Error('_');
   }
+
+  function KnivesOrBlocks({ end, start }) {
+    return (
+      <ul>
+        {Object.keys(state.slots)
+          .slice(start, end)
+          .map((id) => {
+            return (
+              <li key={id}>
+                <Slot id={id} knife={state.slots[id]} onClick={handleOnClick} />
+              </li>
+            );
+          })}
+      </ul>
+    );
+  }
+
+  KnivesOrBlocks.propTypes = {
+    end: PropTypes.number.isRequired,
+    start: PropTypes.number.isRequired
+  };
 
   return (
     <main>
@@ -46,18 +105,11 @@ function App() {
       </h2>
       <section>
         <h3 className="source-sans-3-500">Knives</h3>
-        TODO
+        <KnivesOrBlocks end={6} start={0} />
       </section>
       <section>
         <h3 className="source-sans-3-500">Block</h3>
-        TODO
-      </section>
-      <section>TODO</section>
-      <section className="playground">
-        <Knife color="blue" dispatch={dispatch} id="k1" />
-        <Knife color="red" dispatch={dispatch} id="k2" />
-        <Slot dispatch={dispatch} id="s1" onClick={getKnifeFromState} />
-        <Slot dispatch={dispatch} id="s2" onClick={getKnifeFromState} />
+        <KnivesOrBlocks end={12} start={6} />
       </section>
     </main>
   );

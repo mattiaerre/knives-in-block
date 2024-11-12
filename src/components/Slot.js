@@ -1,37 +1,24 @@
-import { BLACK, EMPTY, FULL } from './constants';
+import { BLACK, EMPTY } from './constants';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './Slot.module.css';
-import { useState } from 'react';
 
-export default function Slot({ dispatch, id, onClick }) {
-  const [knife, setKnife] = useState(null);
-  const [state, setState] = useState(EMPTY);
-
-  function handleOnClick() {
-    const _knife = onClick();
-    if (state === EMPTY && _knife) {
-      setKnife(_knife);
-      setState(FULL);
-      return dispatch({
-        type: 'slot_place_knife',
-        value: { id: id, knife: _knife }
-      });
-    }
-  }
-
+export default function Slot({ id, knife, onClick }) {
   return (
     <div
-      className={classNames(styles[state], styles.slot)}
+      className={classNames(styles[knife ? knife.state : EMPTY], styles.slot)}
       data-testid="slot"
-      onClick={handleOnClick}
+      id={id}
+      onClick={() => {
+        onClick({ id: id, knife: knife });
+      }}
       style={{ backgroundColor: knife ? knife.color : BLACK }}
     ></div>
   );
 }
 
 Slot.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  knife: PropTypes.object,
   onClick: PropTypes.func.isRequired
 };
