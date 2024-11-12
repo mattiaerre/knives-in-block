@@ -15,4 +15,5 @@ npm run deploy
 - [Create React App](https://create-react-app.dev/)
 - [GitHub Pages](https://create-react-app.dev/docs/deployment/#github-pages)
 - [Google Fonts - Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
+- [How can I rename a local Git branch?](https://stackoverflow.com/questions/6591213/how-can-i-rename-a-local-git-branch)
 - [NVM](https://github.com/nvm-sh/nvm)
