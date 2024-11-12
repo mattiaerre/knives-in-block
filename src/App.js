@@ -1,11 +1,19 @@
 import './App.css';
-import { BLOCK, DOWN, KNIVES, UP } from './components/constants';
+import {
+  BLOCK,
+  DOWN,
+  GREEN,
+  KNIVES,
+  LIGHTGRAY,
+  UP
+} from './components/constants';
 import PropTypes from 'prop-types';
 import Slot from './components/Slot';
 import classNames from 'classnames';
+import computeBorderColor from './computeBorderColor';
 import { useReducer } from 'react';
 
-const version = '0.3.0';
+const version = '0.4.0';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
@@ -23,8 +31,6 @@ const initialSlots = {
 };
 
 const initialArg = {
-  block: null,
-  knife: null,
   slot: null,
   slots: initialSlots
 };
@@ -84,7 +90,10 @@ function App() {
 
   function KnivesOrBlocks({ end, start, type }) {
     return (
-      <ul className={classNames(type)} style={{ borderColor: 'gray' }}>
+      <ul
+        className={classNames(type)}
+        style={{ borderColor: computeBorderColor(state.slots) }}
+      >
         {Object.keys(state.slots)
           .slice(start, end)
           .map((id) => {
@@ -135,11 +144,14 @@ function App() {
         <p>
           Move knives into blocks to create beautiful patterns. Some are
           allowed, and the block border will turn{' '}
-          <span style={{ color: 'green', fontWeight: 'bold' }}>green</span>,
-          while others are not, and the block border will turn{' '}
+          <span style={{ color: GREEN, fontWeight: 'bold' }}>green</span>, while
+          others are not, and the block border will turn{' '}
           <span style={{ color: 'red', fontWeight: 'bold' }}>red</span>. As you
           place the knives, the block border will remain{' '}
-          <span style={{ color: 'gray', fontWeight: 'bold' }}>gray</span>.
+          <span style={{ color: LIGHTGRAY, fontWeight: 'bold' }}>
+            lightgray
+          </span>
+          .
         </p>
       </section>
       <footer>

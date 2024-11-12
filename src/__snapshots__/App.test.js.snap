@@ -32,7 +32,7 @@ exports[`renders 1`] = `
       </h3>
       <ul
         class="knives"
-        style="border-color: gray;"
+        style="border-color: lightgray;"
       >
         <li>
           <div
@@ -92,7 +92,7 @@ exports[`renders 1`] = `
       </h3>
       <ul
         class="block"
-        style="border-color: gray;"
+        style="border-color: lightgray;"
       >
         <li>
           <div
@@ -165,9 +165,9 @@ exports[`renders 1`] = `
         </span>
         . As you place the knives, the block border will remain 
         <span
-          style="color: gray; font-weight: bold;"
+          style="color: lightgray; font-weight: bold;"
         >
-          gray
+          lightgray
         </span>
         .
       </p>
@@ -176,7 +176,7 @@ exports[`renders 1`] = `
       <small
         class="source-sans-3-400"
       >
-        knives-in-block v0.3.0 ©2024
+        knives-in-block v0.4.0 ©2024
       </small>
     </footer>
   </main>
