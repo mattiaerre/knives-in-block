@@ -19,7 +19,10 @@ exports[`renders 1`] = `
       >
         Knives
       </h3>
-      <ul>
+      <ul
+        class="knives"
+        style="border-color: gray;"
+      >
         <li>
           <div
             class="down slot"
@@ -76,7 +79,10 @@ exports[`renders 1`] = `
       >
         Block
       </h3>
-      <ul>
+      <ul
+        class="block"
+        style="border-color: gray;"
+      >
         <li>
           <div
             class="empty slot"
@@ -126,6 +132,34 @@ exports[`renders 1`] = `
           />
         </li>
       </ul>
+    </section>
+    <section>
+      <h3
+        class="source-sans-3-500"
+      >
+        Rules
+      </h3>
+      <p>
+        Move knives into blocks to create beautiful patterns. Some are allowed, and the block border will turn 
+        <span
+          style="color: green; font-weight: bold;"
+        >
+          green
+        </span>
+        , while others are not, and the block border will turn 
+        <span
+          style="color: red; font-weight: bold;"
+        >
+          red
+        </span>
+        . As you place the knives, the block border will remain 
+        <span
+          style="color: gray; font-weight: bold;"
+        >
+          gray
+        </span>
+        .
+      </p>
     </section>
   </main>
 </DocumentFragment>

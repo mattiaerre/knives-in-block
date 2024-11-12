@@ -1,7 +1,8 @@
 import './App.css';
-import { DOWN, UP } from './components/constants';
+import { BLOCK, DOWN, KNIVES, UP } from './components/constants';
 import PropTypes from 'prop-types';
 import Slot from './components/Slot';
+import classNames from 'classnames';
 import { useReducer } from 'react';
 
 const initialSlots = {
@@ -76,9 +77,9 @@ function App() {
     throw Error('Oops!');
   }
 
-  function KnivesOrBlocks({ end, start }) {
+  function KnivesOrBlocks({ end, start, type }) {
     return (
-      <ul>
+      <ul className={classNames(type)} style={{ borderColor: 'gray' }}>
         {Object.keys(state.slots)
           .slice(start, end)
           .map((id) => {
@@ -94,7 +95,8 @@ function App() {
 
   KnivesOrBlocks.propTypes = {
     end: PropTypes.number.isRequired,
-    start: PropTypes.number.isRequired
+    start: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired
   };
 
   return (
@@ -105,11 +107,23 @@ function App() {
       </h2>
       <section>
         <h3 className="source-sans-3-500">Knives</h3>
-        <KnivesOrBlocks end={6} start={0} />
+        <KnivesOrBlocks end={6} start={0} type={KNIVES} />
       </section>
       <section>
         <h3 className="source-sans-3-500">Block</h3>
-        <KnivesOrBlocks end={12} start={6} />
+        <KnivesOrBlocks end={12} start={6} type={BLOCK} />
+      </section>
+      <section>
+        <h3 className="source-sans-3-500">Rules</h3>
+        <p>
+          Move knives into blocks to create beautiful patterns. Some are
+          allowed, and the block border will turn{' '}
+          <span style={{ color: 'green', fontWeight: 'bold' }}>green</span>,
+          while others are not, and the block border will turn{' '}
+          <span style={{ color: 'red', fontWeight: 'bold' }}>red</span>. As you
+          place the knives, the block border will remain{' '}
+          <span style={{ color: 'gray', fontWeight: 'bold' }}>gray</span>.
+        </p>
       </section>
     </main>
   );
