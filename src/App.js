@@ -73,7 +73,7 @@ function App() {
     if (state.slot !== null && slot.knife !== null) {
       return console.log('The target slot is already full');
     }
-    throw Error('_');
+    throw Error('Oops!');
   }
 
   function KnivesOrBlocks({ end, start }) {

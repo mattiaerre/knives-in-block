@@ -4,7 +4,7 @@ exports[`renders w/ knife 1`] = `
 <DocumentFragment>
   <div
     class="undefined slot"
-    data-testid="slot"
+    data-testid="s1"
     id="s1"
     style="background-color: blue;"
   />
@@ -15,7 +15,7 @@ exports[`renders w/o knife 1`] = `
 <DocumentFragment>
   <div
     class="empty slot"
-    data-testid="slot"
+    data-testid="s2"
     id="s2"
     style="background-color: black;"
   />

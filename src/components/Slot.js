@@ -7,7 +7,7 @@ export default function Slot({ id, knife, onClick }) {
   return (
     <div
       className={classNames(styles[knife ? knife.state : EMPTY], styles.slot)}
-      data-testid="slot"
+      data-testid={id}
       id={id}
       onClick={() => {
         onClick({ id: id, knife: knife });
