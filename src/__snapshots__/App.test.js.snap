@@ -171,12 +171,15 @@ exports[`renders 1`] = `
         </span>
         .
       </p>
+      <p>
+        N.B.: Drag and drop doesn't work; try to click instead.
+      </p>
     </section>
     <footer>
       <small
         class="source-sans-3-400"
       >
-        knives-in-block v0.4.0 ©2024
+        knives-in-block v0.4.1 ©2024
       </small>
     </footer>
   </main>

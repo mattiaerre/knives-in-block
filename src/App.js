@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import computeBorderColor from './computeBorderColor';
 import { useReducer } from 'react';
 
-const version = '0.4.0';
+const version = '0.4.1';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
@@ -153,6 +153,7 @@ function App() {
           </span>
           .
         </p>
+        <p>N.B.: Drag and drop doesn&apos;t work; try to click instead.</p>
       </section>
       <footer>
         <small className="source-sans-3-400">
