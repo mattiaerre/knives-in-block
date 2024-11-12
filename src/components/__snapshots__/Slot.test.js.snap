@@ -3,7 +3,7 @@
 exports[`renders w/ knife 1`] = `
 <DocumentFragment>
   <div
-    class="undefined slot"
+    class="down slot"
     data-testid="s1"
     id="s1"
     style="background-color: blue;"
