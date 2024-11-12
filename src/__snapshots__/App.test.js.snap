@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <main>
+    <h1
+      class="source-sans-3-700"
+    >
+      Jean Dubost
+    </h1>
+    <h2
+      class="source-sans-3-500"
+    >
+      Laguiole Set of 6 Steak Knives in Block
+    </h2>
+    <section>
+      <h3
+        class="source-sans-3-500"
+      >
+        Knives
+      </h3>
+      <ul
+        class="knives"
+        style="border-color: gray;"
+      >
+        <li>
+          <div
+            class="down slot"
+            data-testid="s1"
+            id="s1"
+            style="background-color: blue;"
+          />
+        </li>
+        <li>
+          <div
+            class="down slot"
+            data-testid="s2"
+            id="s2"
+            style="background-color: blue;"
+          />
+        </li>
+        <li>
+          <div
+            class="down slot"
+            data-testid="s3"
+            id="s3"
+            style="background-color: turquoise;"
+          />
+        </li>
+        <li>
+          <div
+            class="down slot"
+            data-testid="s4"
+            id="s4"
+            style="background-color: turquoise;"
+          />
+        </li>
+        <li>
+          <div
+            class="down slot"
+            data-testid="s5"
+            id="s5"
+            style="background-color: white;"
+          />
+        </li>
+        <li>
+          <div
+            class="down slot"
+            data-testid="s6"
+            id="s6"
+            style="background-color: white;"
+          />
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3
+        class="source-sans-3-500"
+      >
+        Block
+      </h3>
+      <ul
+        class="block"
+        style="border-color: gray;"
+      >
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s7"
+            id="s7"
+            style="background-color: black;"
+          />
+        </li>
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s8"
+            id="s8"
+            style="background-color: black;"
+          />
+        </li>
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s9"
+            id="s9"
+            style="background-color: black;"
+          />
+        </li>
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s10"
+            id="s10"
+            style="background-color: black;"
+          />
+        </li>
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s11"
+            id="s11"
+            style="background-color: black;"
+          />
+        </li>
+        <li>
+          <div
+            class="empty slot"
+            data-testid="s12"
+            id="s12"
+            style="background-color: black;"
+          />
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h3
+        class="source-sans-3-500"
+      >
+        Rules
+      </h3>
+      <p>
+        Move knives into blocks to create beautiful patterns. Some are allowed, and the block border will turn 
+        <span
+          style="color: green; font-weight: bold;"
+        >
+          green
+        </span>
+        , while others are not, and the block border will turn 
+        <span
+          style="color: red; font-weight: bold;"
+        >
+          red
+        </span>
+        . As you place the knives, the block border will remain 
+        <span
+          style="color: gray; font-weight: bold;"
+        >
+          gray
+        </span>
+        .
+      </p>
+    </section>
+  </main>
+</DocumentFragment>
+`;

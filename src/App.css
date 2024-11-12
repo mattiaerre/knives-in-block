@@ -1,10 +1,26 @@
+h3 {
+  margin: 1.5em 0 0.5em;
+}
+
 main {
   text-align: center;
 }
 
-section {
-  border-bottom: 1px solid gray;
-  margin-bottom: 40px;
+section > p {
+  text-align: left;
+  padding: 0.5em 2em;
+}
+
+section > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section > p,
+ul {
+  max-width: 400px;
+  margin: auto;
 }
 
 ul {
@@ -13,53 +29,6 @@ ul {
   padding: 0;
 }
 
-.block,
-.knives {
-  /*
-  background-color: red;
-  */
-}
-
-.row {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.knife {
-  cursor: pointer;
-}
-
-.disabled {
-  cursor: default;
-  opacity: 0.25;
-}
-
-.knife,
-.slot {
-  border: 1px solid gray;
-  height: 20px;
-  margin: 10px 40px;
-  width: 40px;
-}
-
-.empty {
-  background-color: black;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.turquoise {
-  background-color: turquoise;
-}
-
-.white {
-  background-color: white;
-}
-
-.debug {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.block {
+  border: 2px solid gray;
 }
