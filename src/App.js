@@ -5,7 +5,7 @@ import Slot from './components/Slot';
 import classNames from 'classnames';
 import { useReducer } from 'react';
 
-const version = '0.2.0';
+const version = '0.2.1';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
