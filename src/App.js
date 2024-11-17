@@ -8,13 +8,10 @@ import {
   RED,
   UP
 } from './components/constants';
-import PropTypes from 'prop-types';
-import Slot from './components/Slot';
-import classNames from 'classnames';
-import computeBorderColor from './computeBorderColor';
+import KnivesOrBlocks from './components/KnivesOrBlocks';
 import { useReducer } from 'react';
 
-const version = '0.4.3';
+const version = '0.5.1';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
@@ -89,31 +86,6 @@ function App() {
     throw Error('Oops!');
   }
 
-  function KnivesOrBlocks({ end, start, type }) {
-    return (
-      <ul
-        className={classNames(type)}
-        style={{ borderColor: computeBorderColor(state.slots) }}
-      >
-        {Object.keys(state.slots)
-          .slice(start, end)
-          .map((id) => {
-            return (
-              <li key={id}>
-                <Slot id={id} knife={state.slots[id]} onClick={handleOnClick} />
-              </li>
-            );
-          })}
-      </ul>
-    );
-  }
-
-  KnivesOrBlocks.propTypes = {
-    end: PropTypes.number.isRequired,
-    start: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired
-  };
-
   return (
     <main>
       <h1 className="source-sans-3-700">Jean Dubost</h1>
@@ -134,11 +106,23 @@ function App() {
       </section>
       <section>
         <h3 className="source-sans-3-500">Knives</h3>
-        <KnivesOrBlocks end={6} start={0} type={KNIVES} />
+        <KnivesOrBlocks
+          end={6}
+          onClick={handleOnClick}
+          slots={state.slots}
+          start={0}
+          type={KNIVES}
+        />
       </section>
       <section>
         <h3 className="source-sans-3-500">Block</h3>
-        <KnivesOrBlocks end={12} start={6} type={BLOCK} />
+        <KnivesOrBlocks
+          end={12}
+          onClick={handleOnClick}
+          slots={state.slots}
+          start={6}
+          type={BLOCK}
+        />
       </section>
       <section>
         <h3 className="source-sans-3-500">Rules</h3>

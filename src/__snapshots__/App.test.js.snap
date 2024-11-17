@@ -32,7 +32,6 @@ exports[`renders 1`] = `
       </h3>
       <ul
         class="knives"
-        style="border-color: lightgray;"
       >
         <li>
           <div
@@ -179,7 +178,7 @@ exports[`renders 1`] = `
       <small
         class="source-sans-3-400"
       >
-        knives-in-block v0.4.3 ©2024
+        knives-in-block v0.5.1 ©2024
       </small>
     </footer>
   </main>
