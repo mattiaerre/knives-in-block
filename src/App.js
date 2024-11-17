@@ -13,7 +13,7 @@ import classNames from 'classnames';
 import computeBorderColor from './computeBorderColor';
 import { useReducer } from 'react';
 
-const version = '0.4.2';
+const version = '0.4.3';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
