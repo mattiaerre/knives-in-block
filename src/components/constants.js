@@ -5,4 +5,5 @@ export const EMPTY = 'empty';
 export const GREEN = 'green';
 export const KNIVES = 'knives';
 export const LIGHTGRAY = 'lightgray';
+export const RED = 'red';
 export const UP = 'up';
