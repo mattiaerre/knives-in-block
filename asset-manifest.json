@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/knives-in-block/static/css/main.92a14c4a.css",
-    "main.js": "/knives-in-block/static/js/main.dfdd51fd.js",
+    "main.css": "/knives-in-block/static/css/main.5a1018ee.css",
+    "main.js": "/knives-in-block/static/js/main.7c3a7c3b.js",
     "static/js/453.88eeffa3.chunk.js": "/knives-in-block/static/js/453.88eeffa3.chunk.js",
     "index.html": "/knives-in-block/index.html",
-    "main.92a14c4a.css.map": "/knives-in-block/static/css/main.92a14c4a.css.map",
-    "main.dfdd51fd.js.map": "/knives-in-block/static/js/main.dfdd51fd.js.map",
+    "main.5a1018ee.css.map": "/knives-in-block/static/css/main.5a1018ee.css.map",
+    "main.7c3a7c3b.js.map": "/knives-in-block/static/js/main.7c3a7c3b.js.map",
     "453.88eeffa3.chunk.js.map": "/knives-in-block/static/js/453.88eeffa3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92a14c4a.css",
-    "static/js/main.dfdd51fd.js"
+    "static/css/main.5a1018ee.css",
+    "static/js/main.7c3a7c3b.js"
   ]
 }
