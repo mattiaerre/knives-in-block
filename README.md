@@ -10,6 +10,18 @@
 npm run deploy
 ```
 
+### Run
+
+```bash
+npm start
+```
+
+### Test
+
+```bash
+npm test -- --coverage --watchAll
+```
+
 ## Resources
 
 - [Create React App](https://create-react-app.dev/)
