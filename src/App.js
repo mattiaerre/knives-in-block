@@ -5,6 +5,7 @@ import {
   GREEN,
   KNIVES,
   LIGHTGRAY,
+  RED,
   UP
 } from './components/constants';
 import PropTypes from 'prop-types';
@@ -146,7 +147,7 @@ function App() {
           allowed, and the block border will turn{' '}
           <span style={{ color: GREEN, fontWeight: 'bold' }}>green</span>, while
           others are not, and the block border will turn{' '}
-          <span style={{ color: 'red', fontWeight: 'bold' }}>red</span>. As you
+          <span style={{ color: RED, fontWeight: 'bold' }}>red</span>. As you
           place the knives, the block border will remain{' '}
           <span style={{ color: LIGHTGRAY, fontWeight: 'bold' }}>
             lightgray
