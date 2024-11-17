@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import Slot from './Slot';
 import classNames from 'classnames';
 import computeBorderColor from './computeBorderColor';
+import styles from './KnivesOrBlocks.module.css';
 
 export default function KnivesOrBlocks({ end, onClick, slots, start, type }) {
   return (
     <ul
-      className={classNames(type)}
+      className={classNames(styles[type])}
       style={{ borderColor: type === BLOCK ? computeBorderColor(slots) : null }}
     >
       {Object.keys(slots)
