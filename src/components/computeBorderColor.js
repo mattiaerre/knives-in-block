@@ -1,4 +1,4 @@
-import { GREEN, LIGHTGRAY, RED } from './components/constants';
+import { GREEN, LIGHTGRAY, RED } from './constants';
 
 function twoKnivesOfTheSameColorOnTheSameRow(row, slots) {
   const knives = row.reduce((accumulator, currentValue) => {
