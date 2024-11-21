@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/knives-in-block/static/css/main.5a1018ee.css",
-    "main.js": "/knives-in-block/static/js/main.7c3a7c3b.js",
+    "main.js": "/knives-in-block/static/js/main.22964686.js",
     "static/js/453.88eeffa3.chunk.js": "/knives-in-block/static/js/453.88eeffa3.chunk.js",
     "index.html": "/knives-in-block/index.html",
     "main.5a1018ee.css.map": "/knives-in-block/static/css/main.5a1018ee.css.map",
-    "main.7c3a7c3b.js.map": "/knives-in-block/static/js/main.7c3a7c3b.js.map",
+    "main.22964686.js.map": "/knives-in-block/static/js/main.22964686.js.map",
     "453.88eeffa3.chunk.js.map": "/knives-in-block/static/js/453.88eeffa3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5a1018ee.css",
-    "static/js/main.7c3a7c3b.js"
+    "static/js/main.22964686.js"
   ]
 }
