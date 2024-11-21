@@ -11,7 +11,7 @@ import {
 import KnivesOrBlocks from './components/KnivesOrBlocks';
 import { useReducer } from 'react';
 
-const version = '0.5.1';
+const version = '0.6.0';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
