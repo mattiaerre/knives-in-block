@@ -22,7 +22,7 @@ function twoKnivesOfTheSameColorOnTheSameRow(row, slots) {
   }
 }
 
-function littleX(block, slots) {
+function smallX(block, slots) {
   // little X example
   // | b | t | - |
   // |---|---|---|
@@ -73,7 +73,7 @@ function computeBorderColor(slots) {
     return RED;
   }
 
-  if (littleX(block, slots)) {
+  if (smallX(block, slots)) {
     return RED;
   }
 
