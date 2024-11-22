@@ -25,6 +25,7 @@ npm test -- --coverage --watchAll
 ## Resources
 
 - [Create React App](https://create-react-app.dev/)
+  - [Start a New React Project](https://react.dev/learn/start-a-new-react-project) `create-react-app was deprecated in 2023`
 - [GitHub Pages](https://create-react-app.dev/docs/deployment/#github-pages)
 - [Google Fonts - Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3)
 - [How can I rename a local Git branch?](https://stackoverflow.com/questions/6591213/how-can-i-rename-a-local-git-branch)
