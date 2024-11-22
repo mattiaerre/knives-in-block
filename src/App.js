@@ -11,7 +11,7 @@ import {
 import KnivesOrBlocks from './components/KnivesOrBlocks';
 import { useReducer } from 'react';
 
-const version = '0.5.1';
+const version = '0.6.1';
 
 const initialSlots = {
   s1: { color: 'blue', id: 'k1', state: DOWN },
@@ -93,18 +93,6 @@ function App() {
         Laguiole Set of 6 Steak Knives in Block
       </h2>
       <section>
-        <p style={{ textAlign: 'right' }}>
-          <button
-            className="source-sans-3-500"
-            onClick={() => {
-              dispatch({ type: 'reset' });
-            }}
-          >
-            Reset
-          </button>
-        </p>
-      </section>
-      <section>
         <h3 className="source-sans-3-500">Knives</h3>
         <KnivesOrBlocks
           end={6}
@@ -123,6 +111,18 @@ function App() {
           start={6}
           type={BLOCK}
         />
+      </section>
+      <section>
+        <p>
+          <button
+            className="source-sans-3-500"
+            onClick={() => {
+              dispatch({ type: 'reset' });
+            }}
+          >
+            Reset
+          </button>
+        </p>
       </section>
       <section>
         <h3 className="source-sans-3-500">Rules</h3>

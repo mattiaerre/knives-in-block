@@ -23,6 +23,11 @@ section > ul {
   margin: auto;
 }
 
+section > p > button {
+  font-size: 1em;
+  width: 100%;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
